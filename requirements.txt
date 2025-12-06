@@ -1,4 +1,5 @@
 timm==0.5.4 
+huggingface_hub==0.17.2
 einops==0.4.1
 fvcore
 easydict
