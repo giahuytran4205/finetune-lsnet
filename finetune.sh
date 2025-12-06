@@ -16,7 +16,7 @@ lsnet_s) python -m torch.distributed.launch --nproc_per_node=1 --master_port 123
     --finetune https://huggingface.co/jameslahm/lsnet/resolve/main/lsnet_s.pth --output_dir finetuned/lsnet_t_finetuned.pth --epochs 15
 ;;
 lsnet_b) python -m torch.distributed.launch --nproc_per_node=1 --master_port 12345 --use_env main.py --model lsnet_b --data-path dataset/vnfood-30-100 \
-    --finetune https://huggingface.co/jameslahm/lsnet/resolve/main/lsnet_t.pth --output_dir finetuned/lsnet_b_finetuned.pth --weight-decay 0.05 --epochs 10
+    --finetune https://huggingface.co/jameslahm/lsnet/resolve/main/lsnet_b.pth --output_dir finetuned/lsnet_b_finetuned.pth --weight-decay 0.05 --epochs 10
 ;;
 # For training with distillation, please add `--distillation-type hard`
 # For LSNet-B, please add `--weight-decay 0.05`
