@@ -96,6 +96,15 @@ def build_dataset(is_train, args):
         dataset = INatDataset(args.data_path, train=is_train, year=2019,
                               category=args.inat_category, transform=transform)
         nb_classes = dataset.nb_classes
+    elif args.data_set == 'VNFood':
+        prefix = 'train' if is_train else 'val'
+        data_dir = os.path.join(args.data_path, f'{prefix}.tar')
+        if os.path.exists(data_dir):
+            dataset = TimmDatasetTar(data_dir, transform=transform)
+        else:
+            root = os.path.join(args.data_path, 'train' if is_train else 'val')
+            dataset = datasets.ImageFolder(root, transform=transform)
+        nb_classes = 103
     return dataset, nb_classes
 
 

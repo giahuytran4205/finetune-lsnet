@@ -9,13 +9,13 @@ if [ -z "$OPTION" ]; then
 fi
 
 case $OPTION in
-lsnet_t) python -m torch.distributed.launch --nproc_per_node=2 --master_port 12345 --use_env main.py --model lsnet_t --data-path dataset/vnfood-30-100/vnfood_combined_dataset \
+lsnet_t) python -m torch.distributed.launch --nproc_per_node=2 --master_port 12345 --use_env main.py --model lsnet_t --data-set VNFood --data-path dataset/vnfood-30-100/vnfood_combined_dataset \
     --finetune https://huggingface.co/jameslahm/lsnet/resolve/main/lsnet_t.pth --output_dir finetuned/lsnet_t --epochs 30
 ;;
-lsnet_s) python -m torch.distributed.launch --nproc_per_node=2 --master_port 12345 --use_env main.py --model lsnet_s --data-path dataset/vnfood-30-100/vnfood_combined_dataset \
+lsnet_s) python -m torch.distributed.launch --nproc_per_node=2 --master_port 12345 --use_env main.py --model lsnet_s --data-set VNFood --data-path dataset/vnfood-30-100/vnfood_combined_dataset \
     --finetune https://huggingface.co/jameslahm/lsnet/resolve/main/lsnet_s.pth --output_dir finetuned/lsnet_s --epochs 30
 ;;
-lsnet_b) python -m torch.distributed.launch --nproc_per_node=2 --master_port 12345 --use_env main.py --model lsnet_b --data-path dataset/vnfood-30-100/vnfood_combined_dataset \
+lsnet_b) python -m torch.distributed.launch --nproc_per_node=2 --master_port 12345 --use_env main.py --model lsnet_b --data-set VNFood --data-path dataset/vnfood-30-100/vnfood_combined_dataset \
     --finetune https://huggingface.co/jameslahm/lsnet/resolve/main/lsnet_b.pth --output_dir finetuned/lsnet_b --weight-decay 0.05 --epochs 20
 ;;
 esac
