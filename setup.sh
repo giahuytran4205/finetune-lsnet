@@ -40,7 +40,6 @@ curl -L -o dataset/vnfood-30-100.zip \
 
 # 6. Giải nén
 echo ">>> Đang giải nén..."
-mkdir -p dataset
 unzip -o -q dataset/vnfood-30-100.zip -d dataset/vnfood-30-100
 
 echo ">>> HOÀN TẤT!"
