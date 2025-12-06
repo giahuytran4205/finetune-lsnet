@@ -143,3 +143,5 @@ wandb
 pretrain
 *.whl
 ignore
+
+.vscode
