@@ -34,6 +34,7 @@ pip install -r requirements.txt
 
 # 5. Tải data
 echo ">>> Đang tải dataset..."
+mkdir dataset
 curl -L -o dataset/vnfood-30-100.zip \
     https://www.kaggle.com/api/v1/datasets/download/meowluvmatcha/vnfood-30-100
 
