@@ -1,20 +1,21 @@
-_base_ = './retinanet_lsnet_t_fpn_1x_coco.py'
+_base_ = './retinanet_lsnet_b_fpn_1x_coco.py'
 
 dataset_type = 'CocoDataset'
 data_root = 'dataset/UECFOODPIXCOMPLETE_COCO/'
 
 model = dict(
     backbone=dict(        
-        type='lsnet_t',
-        pretrained="pretrain/lsnet_t.pth",
+        type='lsnet_b',
+        pretrained="pretrain/lsnet_b.pth",
         frozen_stages=-1,
     ),
     neck=dict(
         type='LSNetFPN',
-        in_channels=[64, 128, 256, 384],
+        in_channels=[128, 256, 384, 512],
         out_channels=256,
         start_level=0,
         num_outs=5,
+        num_extra_trans_convs=0,
     )
 )
 
