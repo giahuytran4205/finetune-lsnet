@@ -17,7 +17,7 @@ fi
 # 2. Tạo môi trường Python 3.8 (Nếu chưa có)
 # Thêm 'numpy' vào đây luôn để Conda cài bản chuẩn, tránh lỗi build bằng pip
 echo ">>> Đang tạo môi trường lsnet..."
-conda create -n lsnet python==3.8
+conda create -y -n lsnet python==3.8
 
 # 3. Kích hoạt môi trường
 echo ">>> Đang kích hoạt lsnet..."

@@ -17,7 +17,7 @@ fi
 # 2. Tạo môi trường Python 3.8 (Nếu chưa có)
 # Thêm 'numpy' vào đây luôn để Conda cài bản chuẩn, tránh lỗi build bằng pip
 echo ">>> Đang tạo môi trường lsnet..."
-conda create -n lsnet python==3.8
+conda create -y -n lsnet python==3.8
 
 # 3. Kích hoạt môi trường
 echo ">>> Đang kích hoạt lsnet..."
@@ -31,7 +31,7 @@ echo ">>> Version: $(python --version)"
 # Lưu ý: Numpy đã cài ở trên rồi, pip sẽ tự bỏ qua hoặc check lại thôi
 echo ">>> Đang cài requirements..."
 pip install -r ../requirements.txt
-pip install pip install mmcv-full==1.7.2
+pip install mmcv-full==1.7.2
 pip install mmdet==2.28.2
 
 cat > venv/lsnet/lib/python3.8/site-packages/mmcv/parallel/_functions.py << 'EOF'
