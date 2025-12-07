@@ -4,44 +4,9 @@ dataset_type = 'CocoDataset'
 data_root = 'dataset/UECFOODPIXCOMPLETE_COCO/'
 
 model = dict(
-    backbone=dict(        
-        type='lsnet_s',
-        pretrained="pretrain/lsnet_s.pth",
-        frozen_stages=-1,
-    ),
-    neck=dict(
-        type='LSNetFPN',
-        in_channels=[96, 192, 320, 448],
-        out_channels=256,
-        start_level=0,
-        num_outs=5,
-    ),
+    pretrained='./pretrain/lsnet_s_retinanet.pth',
     bbox_head=dict(
-        type='RetinaHead',
-        num_classes=102,
-        in_channels=256,
-        stacked_convs=4,
-        feat_channels=256,
-        anchor_generator=dict(
-            type='AnchorGenerator',
-            octave_base_scale=3, 
-            scales_per_octave=3,
-            ratios=[0.5, 1.0, 2.0],
-            strides=[4, 8, 16, 32, 64] 
-        ),
-        bbox_coder=dict(
-            type='DeltaXYWHBBoxCoder',
-            target_means=[.0, .0, .0, .0],
-            target_stds=[1.0, 1.0, 1.0, 1.0]
-        ),
-        loss_cls=dict(
-            type='FocalLoss',
-            use_sigmoid=True,
-            gamma=2.0,
-            alpha=0.25,
-            loss_weight=1.0
-        ),
-        loss_bbox=dict(type='L1Loss', loss_weight=1.0)
+        num_classes=102
     )
 )
 
