@@ -34,7 +34,7 @@ pip install -r ../requirements.txt
 pip install mmcv-full==1.7.2
 pip install mmdet==2.28.2
 
-cat > venv/lsnet/lib/python3.8/site-packages/mmcv/parallel/_functions.py << 'EOF'
+cat > /venv/lsnet/lib/python3.8/site-packages/mmcv/parallel/_functions.py << 'EOF'
 # Copyright (c) OpenMMLab. All rights reserved.
 from typing import List, Optional, Union
 
@@ -123,7 +123,7 @@ class Scatter:
         return tuple(outputs) if isinstance(outputs, list) else (outputs, )
 EOF
 
-cat > venv/lsnet/lib/python3.8/site-packages/mmcv/parallel/distributed.py << 'EOF'
+cat > /venv/lsnet/lib/python3.8/site-packages/mmcv/parallel/distributed.py << 'EOF'
 # Copyright (c) OpenMMLab. All rights reserved.
 from typing import Any, List, Tuple
 
