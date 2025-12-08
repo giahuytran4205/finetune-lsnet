@@ -4,7 +4,6 @@ dataset_type = 'CocoDataset'
 data_root = 'dataset/UECFOODPIXCOMPLETE_COCO/'
 
 model = dict(
-    pretrained='./pretrain/lsnet_t_retinanet.pth',
     bbox_head=dict(
         num_classes=102
     )
@@ -29,3 +28,4 @@ data = dict(
         ann_file=data_root + 'test/annotation.json',
         img_prefix=data_root))
 evaluation = dict(interval=1, metric='bbox')
+load_from = './pretrain/lsnet_t_retinanet.pth'

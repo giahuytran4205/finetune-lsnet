@@ -4,7 +4,6 @@ dataset_type = 'CocoDataset'
 data_root = 'dataset/UECFOODPIXCOMPLETE_COCO/'
 
 model = dict(
-    pretrained='./pretrain/lsnet_s_retinanet.pth',
     bbox_head=dict(
         num_classes=102
     )
@@ -30,4 +29,4 @@ data = dict(
         img_prefix=data_root))
 evaluation = dict(interval=1, metric='bbox')
 
-load_from = './pretrain/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'
+load_from = './pretrain/lsnet_s_retinanet.pth'

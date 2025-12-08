@@ -294,7 +294,9 @@ EOF
 
 git clone https://huggingface.co/jameslahm/lsnet ./pretrain
 
-git clone https://huggingface.co/giahuy4205/lsnet-finetuned-models ./pretrain
+cd pretrain
+curl -O https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth
+cd ..
 
 # 5. Tải data
 echo ">>> Đang tải dataset..."
