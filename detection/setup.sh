@@ -294,6 +294,8 @@ EOF
 
 git clone https://huggingface.co/jameslahm/lsnet ./pretrain
 
+git clone https://huggingface.co/giahuy4205/lsnet-finetuned-models ./pretrain
+
 # 5. Tải data
 echo ">>> Đang tải dataset..."
 mkdir dataset
