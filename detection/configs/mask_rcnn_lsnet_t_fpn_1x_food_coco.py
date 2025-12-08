@@ -7,8 +7,13 @@ model = dict(
     backbone=dict(
         pretrained=None,
     ),
-    bbox_head=dict(
-        num_classes=102
+    roi_head=dict(
+        bbox_head=dict(
+            num_classes=102,
+        ),
+        mask_head=dict(
+            num_classes=102,
+        )
     )
 )
 
