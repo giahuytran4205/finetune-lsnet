@@ -29,3 +29,5 @@ data = dict(
         ann_file=data_root + 'test/annotation.json',
         img_prefix=data_root))
 evaluation = dict(interval=1, metric='bbox')
+
+load_from = './pretrain/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'
