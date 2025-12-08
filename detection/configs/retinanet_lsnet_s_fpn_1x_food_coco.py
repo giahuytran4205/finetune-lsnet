@@ -4,6 +4,9 @@ dataset_type = 'CocoDataset'
 data_root = 'dataset/UECFOODPIXCOMPLETE_COCO/'
 
 model = dict(
+    backbone=dict(
+        pretrained=None,
+    ),
     bbox_head=dict(
         num_classes=102
     )
